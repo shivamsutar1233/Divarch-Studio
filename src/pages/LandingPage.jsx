@@ -138,7 +138,7 @@ export default function LandingPage() {
               </div>
               <div className="mt-8">
                 <a
-                  href="https://estimator.alphasquare.in/"
+                  href="https://estimator.div-arch.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
