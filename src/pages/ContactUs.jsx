@@ -50,7 +50,7 @@ export default function ContactUs() {
             <input
               name="from_name"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
               placeholder="Your name"
             />
           </div>
@@ -61,7 +61,7 @@ export default function ContactUs() {
               name="reply_to"
               type="email"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
               placeholder="you@example.com"
             />
           </div>
@@ -72,7 +72,7 @@ export default function ContactUs() {
               name="message"
               rows="5"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
               placeholder="Tell us what's on your mind..."
             />
           </div>
@@ -81,7 +81,7 @@ export default function ContactUs() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center px-4 py-2 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center px-4 py-2 rounded-md bg-orange-500 text-white font-medium hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
@@ -103,10 +103,22 @@ export default function ContactUs() {
           <h3 className="text-lg font-semibold mb-2">Other ways to reach us</h3>
           <ul className="text-sm text-gray-700 space-y-2">
             <li>
-              <strong>Email:</strong> support@div-arch.in
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:privacy@div-arch.in"
+                className="font-medium underline hover:text-blue-600"
+              >
+                privacy@div-arch.in
+              </a>
             </li>
             <li>
-              <strong>Phone:</strong> {import.meta.env.VITE_CONTACT_NUMBER}
+              <strong>Phone:</strong>{" "}
+              <a
+                href={`tel:${import.meta.env.VITE_WHATSAPP_NUMBER}`}
+                className="font-medium underline hover:text-blue-600"
+              >
+                {import.meta.env.VITE_WHATSAPP_NUMBER}
+              </a>
             </li>
             <li>
               <strong>Office:</strong> Akluj, Solapur, India
