@@ -11,6 +11,7 @@ import ShippingAndDelivery from "./pages/ShippingAndDelivery";
 import CancellationAndRefund from "./pages/CancellationAndRefund";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ProductDetails from "./pages/ProductDetails";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:productId" element={<ProductDetails />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route
               path="/shipping-and-delivery"
