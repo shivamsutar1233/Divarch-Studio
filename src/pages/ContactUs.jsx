@@ -50,7 +50,7 @@ export default function ContactUs() {
             <input
               name="from_name"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2"
               placeholder="Your name"
             />
           </div>
@@ -61,7 +61,7 @@ export default function ContactUs() {
               name="reply_to"
               type="email"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2"
               placeholder="you@example.com"
             />
           </div>
@@ -72,7 +72,7 @@ export default function ContactUs() {
               name="message"
               rows="5"
               required
-              className="mt-1 block w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500"
+              className="mt-1 block w-full rounded-md border px-3 py-2"
               placeholder="Tell us what's on your mind..."
             />
           </div>
