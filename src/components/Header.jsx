@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 const NavLink = ({ to, children, onClick, className }) => {
@@ -25,6 +25,7 @@ export default function Header() {
   const location = useLocation();
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
+  const navigate = useNavigate();
 
   // Close menu on route change
   useEffect(() => {
@@ -64,7 +65,10 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-4">
+        <div
+          className="flex items-center space-x-4"
+          onClick={() => navigate("/")}
+        >
           <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform hover:scale-105 overflow-hidden">
             <img
               src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=252,fit=crop/m6L2rnvv8vU5B8xx/div-arch.in-brand-identity-1-EmzxBLoPwP4HfyGl.png"

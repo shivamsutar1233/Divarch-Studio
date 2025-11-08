@@ -163,7 +163,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160607-7685d38a4d0c?ixlib=rb-4.0.3"
+                  src="https://k8rxgtoiutiza1zk.public.blob.vercel-storage.com/divarch-studio/custom3d.jpg"
                   alt="3D Printing Custom Files"
                   className="w-full h-full object-cover"
                 />
@@ -206,14 +206,14 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                  src="https://k8rxgtoiutiza1zk.public.blob.vercel-storage.com/divarch-studio/whyshouldchoose.jpg"
                   alt="3D Printing Process"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
                 <div className="text-4xl font-bold text-orange-600 mb-1">
-                  15+
+                  3+
                 </div>
                 <div className="text-gray-600">Years of Excellence</div>
               </div>
