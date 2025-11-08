@@ -1,17 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const NavLink = ({ to, children }) => {
+const NavLink = ({ to, children, onClick, className }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
   return (
     <Link
       to={to}
+      onClick={onClick}
       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out ${
         isActive
           ? "bg-orange-600 text-white shadow-lg hover:bg-orange-700"
           : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-      }`}
+      } ${className || ""}`}
     >
       {children}
     </Link>
@@ -21,7 +22,16 @@ const NavLink = ({ to, children }) => {
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -29,6 +39,23 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMobileMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -66,6 +93,7 @@ export default function Header() {
         {/* Mobile menu with animation */}
         <div className="md:hidden">
           <button
+            ref={buttonRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 rounded-lg hover:bg-orange-50 transition-colors"
             aria-label="Toggle menu"
@@ -99,18 +127,49 @@ export default function Header() {
 
           {/* Mobile menu panel */}
           <div
-            className={`absolute top-full right-0 w-64 bg-white shadow-xl rounded-lg transform transition-transform duration-300 origin-top-right ${
+            ref={menuRef}
+            className={`fixed top-[72px] right-4 w-64 bg-white shadow-xl rounded-lg transform transition-all duration-300 origin-top-right ${
               isMobileMenuOpen
-                ? "scale-100"
+                ? "scale-100 opacity-100"
                 : "scale-95 opacity-0 pointer-events-none"
             }`}
           >
-            <div className="p-4 space-y-2">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/services">Services</NavLink>
-              <NavLink to="/portfolio">Portfolio</NavLink>
-              <NavLink to="/products">Products</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+            <div className="py-3 flex flex-col">
+              <NavLink
+                to="/"
+                className="w-full !px-6 !py-3 !rounded-none hover:!bg-orange-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/services"
+                className="w-full !px-6 !py-3 !rounded-none hover:!bg-orange-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </NavLink>
+              <NavLink
+                to="/portfolio"
+                className="w-full !px-6 !py-3 !rounded-none hover:!bg-orange-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Portfolio
+              </NavLink>
+              <NavLink
+                to="/products"
+                className="w-full !px-6 !py-3 !rounded-none hover:!bg-orange-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Products
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className="w-full !px-6 !py-3 !rounded-none hover:!bg-orange-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </NavLink>
             </div>
           </div>
         </div>

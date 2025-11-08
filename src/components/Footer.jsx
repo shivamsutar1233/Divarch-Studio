@@ -7,7 +7,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-gray-800">Company</h3>
             <div className="space-y-2">
               <a
-                href="/contact-us"
+                href="/contact"
                 className="block text-sm text-gray-600 hover:text-orange-600"
               >
                 Contact Us
