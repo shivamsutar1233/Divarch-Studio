@@ -5,12 +5,14 @@ export default function LandingPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=252,fit=crop/m6L2rnvv8vU5B8xx/div-arch.in-brand-identity-1-EmzxBLoPwP4HfyGl.png"
-          alt="Architecture Background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-transparent dark:from-gray-950/90 dark:via-gray-950/60 dark:to-transparent z-10"></div>
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?auto=format&fit=crop&w=2070&q=80"
+            alt="3D Printing and Architecture"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
