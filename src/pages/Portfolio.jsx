@@ -53,7 +53,7 @@ const projects = [
     title: "Medical Device Component",
     description: "High-precision medical device prototype",
     image:
-      "https://images.unsplash.com/photo-1581093458791-9f3c3900df7d?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3",
   },
   {
     title: "Custom Art Installation",
@@ -71,6 +71,6 @@ const projects = [
     title: "Design Concept Model",
     description: "Physical model for design validation",
     image:
-      "https://images.unsplash.com/photo-1581092160607-7685d38a4d0c?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1582845512747-e42001c95638?ixlib=rb-4.0.3",
   },
 ];
