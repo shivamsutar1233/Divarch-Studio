@@ -2,8 +2,10 @@ export default function Pricing() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Our Pricing</h1>
-        <p className="mt-4 text-xl text-gray-600">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+          Our Pricing
+        </h1>
+        <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
           Transparent pricing for all your 3D printing needs
         </p>
       </div>
@@ -14,8 +16,8 @@ export default function Pricing() {
             key={index}
             className={`rounded-2xl p-8 ${
               plan.popular
-                ? "bg-orange-50 border-2 border-orange-500 relative"
-                : "bg-white border-2 border-gray-100"
+                ? "bg-orange-50 dark:bg-orange-900/30 border-2 border-orange-500 relative"
+                : "bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700"
             }`}
           >
             {plan.popular && (
@@ -27,15 +29,19 @@ export default function Pricing() {
             )}
 
             <div className="text-center">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                 {plan.name}
               </h3>
-              <p className="text-gray-600 mb-6">{plan.description}</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                {plan.description}
+              </p>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">
+                <span className="text-4xl font-bold text-gray-900 dark:text-white">
                   ${plan.price}
                 </span>
-                <span className="text-gray-600">/project</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  /project
+                </span>
               </div>
             </div>
 
@@ -43,7 +49,7 @@ export default function Pricing() {
               {plan.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center">
                   <svg
-                    className="w-5 h-5 text-orange-500 mr-3"
+                    className="w-5 h-5 text-orange-500 dark:text-orange-400 mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -55,7 +61,9 @@ export default function Pricing() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-600">{feature}</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -63,8 +71,8 @@ export default function Pricing() {
             <button
               className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
                 plan.popular
-                  ? "bg-orange-500 text-white hover:bg-orange-600"
-                  : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                  ? "bg-orange-500 dark:bg-orange-600 text-white hover:bg-orange-600 dark:hover:bg-orange-700"
+                  : "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600"
               }`}
             >
               Get Started

@@ -2,8 +2,10 @@ export default function Portfolio() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Our Portfolio</h1>
-        <p className="mt-4 text-xl text-gray-600">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+          Our Portfolio
+        </h1>
+        <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
           Explore our latest 3D printing projects
         </p>
       </div>
@@ -11,7 +13,7 @@ export default function Portfolio() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div key={index} className="group">
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
               <img
                 src={project.image}
                 alt={project.title}

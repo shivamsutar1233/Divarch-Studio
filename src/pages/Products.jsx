@@ -25,8 +25,10 @@ export default function Products() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-600 border-t-transparent mb-4 mx-auto"></div>
-          <p className="text-gray-600">Loading products...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-600 dark:border-orange-500 border-t-transparent mb-4 mx-auto"></div>
+          <p className="text-gray-600 dark:text-gray-400">
+            Loading products...
+          </p>
         </div>
       </div>
     );
@@ -35,9 +37,9 @@ export default function Products() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <div className="text-center max-w-md mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
           <svg
-            className="w-16 h-16 text-red-500 mx-auto mb-4"
+            className="w-16 h-16 text-red-500 dark:text-red-400 mx-auto mb-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -49,15 +51,17 @@ export default function Products() {
               d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
             />
           </svg>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Oops!</h2>
-          <p className="text-gray-600 mb-4">{error}</p>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Oops!
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">{error}</p>
           <button
             onClick={() => {
               setError(null);
               setLoading(true);
               fetchProducts();
             }}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+            className="px-4 py-2 bg-orange-600 dark:bg-orange-500 text-white rounded-lg hover:bg-orange-700 dark:hover:bg-orange-600 transition-colors"
           >
             Try Again
           </button>
@@ -70,10 +74,10 @@ export default function Products() {
     <div className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Our Products
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-400">
             Explore our collection of high-quality 3D printed products
           </p>
         </div>
@@ -84,9 +88,9 @@ export default function Products() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-gray-100 p-4">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-gray-100 dark:bg-gray-800 p-4">
                 {product.image ? (
                   <img
                     src={product.image}
@@ -117,27 +121,27 @@ export default function Products() {
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900 flex-1 line-clamp-2">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex-1 line-clamp-1">
                     {product.title}
                   </h3>
                   <span
                     className={`px-2 py-1 text-xs font-medium rounded ${
                       product.availability === "in stock"
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
+                        ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
+                        : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"
                     }`}
                   >
                     {product.availability}
                   </span>
                 </div>
 
-                <div className="prose prose-sm mb-4">
-                  <p className="text-gray-600 line-clamp-3">
+                <div className="prose prose-sm dark:prose-invert mb-4">
+                  <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
                     {product.description}
                   </p>
                   <Link
                     to={`/products/${product.id}`}
-                    className="text-orange-600 hover:text-orange-700 text-sm font-medium mt-2 inline-block"
+                    className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 text-sm font-medium mt-2 inline-block"
                   >
                     View Details
                   </Link>
@@ -146,16 +150,22 @@ export default function Products() {
                 <div className="mt-6 flex items-center justify-between">
                   <div>
                     <div className="flex items-baseline">
-                      <span className="text-3xl font-bold text-orange-600">
+                      <span className="text-3xl font-bold text-orange-600 dark:text-orange-400">
                         ₹{product.salePrice ? product.salePrice : product.price}
                       </span>
                       {product.salePrice !== null && (
-                        <span className="ml-2 text-base text-gray-500 line-through">
+                        <span className="ml-2 text-base text-gray-500 dark:text-gray-400 line-through">
                           ₹{product.price}
                         </span>
                       )}
                     </div>
-                    <span className="text-xs text-gray-500">
+                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${
+                      product.condition?.toLowerCase().includes('new')
+                        ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                        : product.condition?.toLowerCase().includes('used')
+                        ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400'
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                    }`}>
                       {product.condition}
                     </span>
                   </div>

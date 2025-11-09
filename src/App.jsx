@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { getInitialTheme, toggleTheme } from "./utils/theme";
 
 import LandingPage from "./pages/LandingPage";
 import Services from "./pages/Services";
@@ -14,10 +16,22 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ProductDetails from "./pages/ProductDetails";
 
 export default function App() {
+  const [theme, setTheme] = useState(getInitialTheme());
+
+  useEffect(() => {
+    toggleTheme(theme);
+  }, [theme]);
+
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white text-gray-800">
-        <Header />
+      <div
+        className={`min-h-screen flex flex-col ${
+          theme === "dark"
+            ? "bg-gray-900 text-gray-100"
+            : "bg-white text-gray-800"
+        }`}
+      >
+        <Header theme={theme} setTheme={setTheme} />
         <main className="flex-1 container mx-auto px-4 py-10 mt-20">
           <Routes>
             <Route path="/" element={<LandingPage />} />

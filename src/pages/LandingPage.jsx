@@ -40,13 +40,13 @@ export default function LandingPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Advanced 3D printing solutions for architectural excellence
             </p>
           </div>
@@ -55,15 +55,17 @@ export default function LandingPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
               >
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 rounded-lg flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -71,21 +73,21 @@ export default function LandingPage() {
       </section>
 
       {/* Price Estimator Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 Print Your Custom STL Files
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Have your own 3D models? Get instant pricing for your STL files
                 using our advanced price estimator.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 text-orange-600 mr-3"
+                    className="w-6 h-6 text-orange-600 dark:text-orange-500 mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -97,11 +99,13 @@ export default function LandingPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">Upload your STL files</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Upload your STL files
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 text-orange-600 mr-3"
+                    className="w-6 h-6 text-orange-600 dark:text-orange-500 mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -113,13 +117,13 @@ export default function LandingPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     Get instant price estimates
                   </span>
                 </div>
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 text-orange-600 mr-3"
+                    className="w-6 h-6 text-orange-600 dark:text-orange-500 mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -131,7 +135,7 @@ export default function LandingPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     Choose from multiple materials
                   </span>
                 </div>
@@ -168,11 +172,13 @@ export default function LandingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-                <div className="text-4xl font-bold text-orange-600 mb-1">
+              <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
+                <div className="text-4xl font-bold text-orange-600 dark:text-orange-500 mb-1">
                   24/7
                 </div>
-                <div className="text-gray-600">Instant Pricing</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  Instant Pricing
+                </div>
               </div>
             </div>
           </div>
@@ -184,20 +190,22 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 Why Choose Div-Arch Studio?
               </h2>
               <div className="space-y-6">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mt-1">
+                    <div className="flex-shrink-0 w-8 h-8 bg-orange-100 dark:bg-orange-900/50 rounded-lg flex items-center justify-center mt-1">
                       {feature.icon}
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-600">{feature.description}</p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -211,11 +219,13 @@ export default function LandingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
-                <div className="text-4xl font-bold text-orange-600 mb-1">
+              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
+                <div className="text-4xl font-bold text-orange-600 dark:text-orange-500 mb-1">
                   3+
                 </div>
-                <div className="text-gray-600">Years of Excellence</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  Years of Excellence
+                </div>
               </div>
             </div>
           </div>
@@ -398,7 +408,7 @@ const features = [
       "State-of-the-art 3D printers and materials for exceptional quality and precision.",
     icon: (
       <svg
-        className="w-5 h-5 text-orange-600"
+        className="w-5 h-5 text-orange-600 dark:text-orange-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -418,7 +428,7 @@ const features = [
       "Quick production times and efficient processes to meet your project deadlines.",
     icon: (
       <svg
-        className="w-5 h-5 text-orange-600"
+        className="w-5 h-5 text-orange-600 dark:text-orange-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -438,7 +448,7 @@ const features = [
       "Tailored 3D printing services for unique architectural requirements and specifications.",
     icon: (
       <svg
-        className="w-5 h-5 text-orange-600"
+        className="w-5 h-5 text-orange-600 dark:text-orange-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

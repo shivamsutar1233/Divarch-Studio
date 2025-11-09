@@ -1,7 +1,7 @@
 export const fetchSheetData = async () => {
   const SHEET_ID = import.meta.env.VITE_PRODUCTS_SHEET_ID;
   const SHEET_NAME = "Sheet1";
-  const SHEET_RANGE = "A2:AJ";
+  const SHEET_RANGE = "A2:AK";
 
   const response = await fetch(
     `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}&range=${SHEET_RANGE}`
@@ -23,6 +23,22 @@ export const fetchSheetData = async () => {
         : null;
     const displayPrice = salePrice || regularPrice;
     const whatsappLink = row.c[35]?.v;
+    const dimensions = row.c[36]?.v
+      ?.split(",")
+      ?.map((dim) => dim.trim())
+      ?.map((dim, index) => {
+        switch (index) {
+          case 0:
+            return `${dim} mm (L)`;
+          case 1:
+            return `${dim} mm (W)`;
+          case 2:
+            return `${dim} mm (H)`;
+          default:
+            return dim;
+        }
+      })
+      ?.join(" x ");
 
     return {
       id: row.c[0]?.v || "",
@@ -38,7 +54,7 @@ export const fetchSheetData = async () => {
       brand: row.c[8]?.v || "",
       material: row.c[19]?.v || "",
       colors: row.c[30]?.v || "",
-      dimensions: row.c[20]?.v || "",
+      dimensions: dimensions || "",
       whatsappLink:
         whatsappLink ||
         `https://wa.me/${

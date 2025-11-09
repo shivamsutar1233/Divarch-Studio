@@ -41,8 +41,10 @@ export default function ProductDetails() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center space-y-4">
-          <p className="text-xl text-red-600">{error}</p>
-          <p className="text-gray-600">Redirecting to products page...</p>
+          <p className="text-xl text-red-600 dark:text-red-400">{error}</p>
+          <p className="text-gray-600 dark:text-gray-400">
+            Redirecting to products page...
+          </p>
         </div>
       </div>
     );
@@ -51,11 +53,10 @@ export default function ProductDetails() {
   if (!product) {
     return null;
   }
-
   return (
-    <div className="min-h-screen py-24 px-4 bg-gray-50">
+    <div className="min-h-screen py-24 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
           <div className="md:flex">
             {/* Product Image */}
             <div className="md:w-1/2">
@@ -70,28 +71,32 @@ export default function ProductDetails() {
 
             {/* Product Details */}
             <div className="md:w-1/2 p-8 md:p-12 space-y-6">
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                 {product.name}
               </h1>
 
               <div className="space-y-4">
-                <p className="text-gray-600">{product.description}</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {product.description}
+                </p>
 
-                <div className="border-t border-b py-4 space-y-3">
+                <div className="border-t border-b dark:border-gray-700 py-4 space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Price:</span>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      Price:
+                    </span>
                     <div className="flex items-center gap-2">
                       {product.salePrice ? (
                         <>
-                          <span className="text-2xl font-bold text-green-600">
+                          <span className="text-2xl font-bold text-green-600 dark:text-green-400">
                             ₹{product.salePrice}
                           </span>
-                          <span className="text-lg text-gray-500 line-through">
+                          <span className="text-lg text-gray-500 dark:text-gray-400 line-through">
                             ₹{product.price}
                           </span>
                         </>
                       ) : (
-                        <span className="text-2xl font-bold text-gray-900">
+                        <span className="text-2xl font-bold text-gray-900 dark:text-white">
                           ₹{product.price}
                         </span>
                       )}
@@ -100,8 +105,10 @@ export default function ProductDetails() {
 
                   {product.dimensions && (
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Dimensions:</span>
-                      <span className="text-gray-900">
+                      <span className="text-gray-600 dark:text-gray-400">
+                        Dimensions:
+                      </span>
+                      <span className="text-gray-900 dark:text-white">
                         {product.dimensions}
                       </span>
                     </div>
@@ -109,8 +116,12 @@ export default function ProductDetails() {
 
                   {product.material && (
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Material:</span>
-                      <span className="text-gray-900">{product.material}</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        Material:
+                      </span>
+                      <span className="text-gray-900 dark:text-white">
+                        {product.material}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -120,7 +131,7 @@ export default function ProductDetails() {
                     href={product.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                    className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-green-600 dark:bg-green-500 hover:bg-green-700 dark:hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:focus:ring-green-400"
                   >
                     <svg
                       className="w-5 h-5 mr-2"
@@ -135,7 +146,7 @@ export default function ProductDetails() {
 
                   <button
                     onClick={() => navigate("/products")}
-                    className="w-full px-6 py-3 border border-gray-300 rounded-lg shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    className="w-full px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm text-base font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 dark:focus:ring-orange-400"
                   >
                     Back to Products
                   </button>
