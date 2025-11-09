@@ -159,13 +159,15 @@ export default function Products() {
                         </span>
                       )}
                     </div>
-                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${
-                      product.condition?.toLowerCase().includes('new')
-                        ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                        : product.condition?.toLowerCase().includes('used')
-                        ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
-                    }`}>
+                    <span
+                      className={`text-xs font-medium px-2 py-1 rounded-full ${
+                        product.condition?.toLowerCase().includes("new")
+                          ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+                          : product.condition?.toLowerCase().includes("used")
+                          ? "bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400"
+                          : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
+                      }`}
+                    >
                       {product.condition}
                     </span>
                   </div>
