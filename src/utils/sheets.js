@@ -1,7 +1,7 @@
 export const fetchSheetData = async () => {
   const SHEET_ID = import.meta.env.VITE_PRODUCTS_SHEET_ID;
   const SHEET_NAME = "Sheet1";
-  const SHEET_RANGE = "A2:AK";
+  const SHEET_RANGE = "A2:AL";
 
   const response = await fetch(
     `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}&range=${SHEET_RANGE}`
@@ -40,6 +40,8 @@ export const fetchSheetData = async () => {
       })
       ?.join(" x ");
 
+    const images = row.c[37]?.v?.split(",")?.map((img) => img.trim()) || [];
+
     return {
       id: row.c[0]?.v || "",
       title: row.c[1]?.v || "",
@@ -62,6 +64,7 @@ export const fetchSheetData = async () => {
         }?text=Hi, I'm interested in ${encodeURIComponent(
           row.c[1]?.v || ""
         )} (${row.c[0]?.v || ""}) priced at ₹${displayPrice}`,
+      additionalImages: [row.c[7]?.v, ...images],
     };
   });
 };

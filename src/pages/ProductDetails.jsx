@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
+import ImageCarousel from "../components/ImageCarousel";
 import { fetchSheetData } from "../utils/sheets";
 
 export default function ProductDetails() {
@@ -61,10 +62,17 @@ export default function ProductDetails() {
             {/* Product Image */}
             <div className="md:w-1/2">
               <div className="relative h-96 md:h-full">
-                <img
-                  src={product.image}
+                <ImageCarousel
+                  images={
+                    product.additionalImages &&
+                    product.additionalImages.length > 0
+                      ? product.additionalImages
+                      : product.image
+                      ? [product.image]
+                      : []
+                  }
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="h-full rounded-none p-0"
                 />
               </div>
             </div>
