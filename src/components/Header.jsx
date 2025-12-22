@@ -80,7 +80,7 @@ export default function Header({ theme, setTheme }) {
         >
           <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform hover:scale-105 overflow-hidden">
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=252,fit=crop/m6L2rnvv8vU5B8xx/div-arch.in-brand-identity-1-EmzxBLoPwP4HfyGl.png"
+              src="https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1766407610876-nuodgt5-Div-Arch.in%20Brand%20Identity-1.png"
               alt="Div-Arch Studio Logo"
               className="w-full h-full object-cover"
             />
