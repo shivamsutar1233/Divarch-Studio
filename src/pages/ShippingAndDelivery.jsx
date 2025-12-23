@@ -309,7 +309,7 @@ export default function ShippingAndDelivery() {
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 For shipping inquiries, contact us at{" "}
                 <a
-                  href="mailto:support@divarchstudio.com"
+                  href="mailto:support@div-arch.in"
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
                 >
                   support@div-arch.in

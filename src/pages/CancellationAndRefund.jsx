@@ -32,7 +32,12 @@ export default function CancellationAndRefund() {
       </p>
 
       <h2 className="dark:text-white">Contact</h2>
-      <p className="dark:text-gray-300">support@yourcompany.com</p>
+      <a
+        href="mailto:support@div-arch.in"
+        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
+      >
+        support@div-arch.in
+      </a>
     </article>
   );
 }
