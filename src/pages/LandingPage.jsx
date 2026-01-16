@@ -8,7 +8,8 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-transparent dark:from-gray-950/90 dark:via-gray-950/60 dark:to-transparent z-10"></div>
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?auto=format&fit=crop&w=2070&q=80"
+            src="https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1768553010862-6qjtg4v-IMG_20260116_140740.jpg"
+            // src="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?auto=format&fit=crop&w=2070&q=80"
             alt="3D Printing and Architecture"
             className="w-full h-full object-cover"
           />
