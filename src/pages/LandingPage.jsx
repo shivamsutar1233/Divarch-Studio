@@ -172,7 +172,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://k8rxgtoiutiza1zk.public.blob.vercel-storage.com/divarch-studio/custom3d.jpg"
+                  src="https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1768553786692-1klexvd-WhatsApp%20Image%202026-01-16%20at%2014.25.51.jpeg"
                   alt="3D Printing Custom Files"
                   className="w-full h-full object-cover"
                 />
@@ -219,7 +219,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://k8rxgtoiutiza1zk.public.blob.vercel-storage.com/divarch-studio/whyshouldchoose.jpg"
+                  src="https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1768553965689-fw62gk9-WhatsApp%20Image%202026-01-16%20at%2014.28.56.jpeg"
                   alt="3D Printing Process"
                   className="w-full h-full object-cover"
                 />
