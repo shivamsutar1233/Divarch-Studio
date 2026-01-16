@@ -25,16 +25,18 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="https://estimator.div-arch.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
               >
                 Start Your Project
               </Link>
               <a
-                href="#services"
+                href="/products"
                 className="px-8 py-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors backdrop-blur-sm font-medium"
               >
-                Explore Services
+                Explore Our Products
               </a>
             </div>
           </div>
