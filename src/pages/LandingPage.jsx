@@ -250,7 +250,7 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/10 transition-colors">
+            <div className="flex flex-col bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/10 transition-colors">
               <div className="bg-orange-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <svg
                   className="w-8 h-8 text-orange-500"
@@ -275,7 +275,7 @@ export default function LandingPage() {
                 href="https://estimator.alphasquare.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
+                className="inline-flex w-fit items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
               >
                 Calculate Price
                 <svg
@@ -294,7 +294,7 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/10 transition-colors">
+            <div className="flex flex-col bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/10 transition-colors">
               <div className="bg-orange-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <svg
                   className="w-8 h-8 text-orange-500"
@@ -317,7 +317,7 @@ export default function LandingPage() {
               </p>
               <Link
                 to="/products"
-                className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
+                className="inline-flex w-fit items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
               >
                 View Products
                 <svg
