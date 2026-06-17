@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import JsonLd from "@/components/JsonLd";
 
-const SITE_URL = "https://div-arch.in";
+const SITE_URL = "https://div-arch.com";
 const OG_IMAGE =
   "https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1766407610876-nuodgt5-Div-Arch.in%20Brand%20Identity-1.png";
 
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   verification: {
-    // google: "your-google-site-verification-code", // add after Search Console setup
+    google: "F-BS7Ha0bNMx6AMAP5fYhvTP7W2Mg6qkKkI0TSvfOoM",
   },
 };
 
@@ -94,9 +94,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="google-site-verification" content="F-BS7Ha0bNMx6AMAP5fYhvTP7W2Mg6qkKkI0TSvfOoM" />
-      </head>
       <body className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <JsonLd />
         <ThemeProvider>

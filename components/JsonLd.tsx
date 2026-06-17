@@ -8,12 +8,12 @@ export default function JsonLd() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://div-arch.in/#business",
+        "@id": "https://div-arch.com/#business",
         name: "Div-Arch Studio",
         alternateName: "Div-Arch",
         description:
           "Revolutionary 3D printing solutions for architectural models, prototypes, keychains, and functional components with precision and innovation.",
-        url: "https://div-arch.in",
+        url: "https://div-arch.com",
         logo: {
           "@type": "ImageObject",
           url: "https://ab2bbkrtuubturud.public.blob.vercel-storage.com/product_images/1766407610876-nuodgt5-Div-Arch.in%20Brand%20Identity-1.png",
@@ -90,16 +90,16 @@ export default function JsonLd() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://div-arch.in/#website",
-        url: "https://div-arch.in",
+        "@id": "https://div-arch.com/#website",
+        url: "https://div-arch.com",
         name: "Div-Arch Studio",
         description: "3D Printing for Modern Architecture",
-        publisher: { "@id": "https://div-arch.in/#business" },
+        publisher: { "@id": "https://div-arch.com/#business" },
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: "https://div-arch.in/products?q={search_term_string}",
+            urlTemplate: "https://div-arch.com/products?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
