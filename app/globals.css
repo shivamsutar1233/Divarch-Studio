@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 17, 24, 39;
+    --background-start-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --foreground-rgb: 249, 250, 251;
+    --background-start-rgb: 17, 24, 39;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-start-rgb));
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .prose-custom h1 {
+    @apply text-3xl font-bold text-gray-900 dark:text-white mb-4 mt-8;
+  }
+  .prose-custom h2 {
+    @apply text-2xl font-semibold text-gray-900 dark:text-white mb-3 mt-6;
+  }
+  .prose-custom p {
+    @apply text-gray-600 dark:text-gray-400 leading-relaxed mb-4;
+  }
+}
