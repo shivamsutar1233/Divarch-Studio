@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { fetchSheetData } from "@/lib/sheets";
 
-const SITE_URL = "https://div-arch.in";
+const SITE_URL = "https://div-arch.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
