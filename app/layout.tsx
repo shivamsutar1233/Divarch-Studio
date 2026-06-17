@@ -94,6 +94,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="google-site-verification" content="F-BS7Ha0bNMx6AMAP5fYhvTP7W2Mg6qkKkI0TSvfOoM" />
+      </head>
       <body className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <JsonLd />
         <ThemeProvider>
